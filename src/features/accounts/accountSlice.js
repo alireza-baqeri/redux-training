@@ -57,7 +57,6 @@ export function deposit(amount, currency) {
       `https://api.frankfurter.dev/v2/rate/${currency}/USD`,
     );
     const data = await res.json();
-    console.log(data);
     const converted = amount * data.rate;
 
     dispatch({ type: "account/deposit", payload: converted });
